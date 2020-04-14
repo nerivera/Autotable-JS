@@ -8,6 +8,6 @@ function genTable(rows, cols, class, enum=true, write=false) {
     res += "    </tr>\n";
   }
   res += "  </tbody>\n</table>";
-  if(write) document.write(res);
+  if(write) window.document.write(res);
   return res;
 }
