@@ -1,4 +1,4 @@
-function genTable(rows, cols, class, enum=true, write=false) {
+function genTable(rows, cols, class, enum=true, writeId="", ind=0) {
   let res = "<table class=\"" + class + "\">\n  <tbody class=" + class + "\">\n";
   for(let r = 0; r < rows; r ++) {
     res += "    <tr class=\"" + class + "\">\n";
@@ -8,6 +8,10 @@ function genTable(rows, cols, class, enum=true, write=false) {
     res += "    </tr>\n";
   }
   res += "  </tbody>\n</table>";
-  if(write) window.document.write(res);
+  lines = res.split("\n");
+  for(let i = 0; i < lines.length; i ++) {
+    lines[i] = " ".repeat(ind) + lines[i];
+  }
+  if(typeof writeId == "string" && writeId != "") window.document.getElementById(writeId).innerHTML += "\n" + lines.join("\n");
   return res;
 }
