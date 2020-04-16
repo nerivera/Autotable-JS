@@ -1,4 +1,4 @@
-function genTable(rows, cols, class, enum=true, writeId="", ind=0) {
+function genTable(rows, cols, class, enum=true, writeId="", ind=4) {
   let res = "<table class=\"" + class + "\">\n  <tbody class=" + class + "\">\n";
   for(let r = 0; r < rows; r ++) {
     res += "    <tr class=\"" + class + "\">\n";
